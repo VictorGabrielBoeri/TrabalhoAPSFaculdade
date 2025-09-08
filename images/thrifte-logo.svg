@@ -1,9 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="120" height="30" viewBox="0 0 120 30">
-  <style>
-    .logo-text { fill: #ffffff; font-family: Arial, sans-serif; font-weight: bold; }
-  </style>
-  <g>
-    <path d="M10,15 L5,15 L5,5 L25,5 L25,15 L20,15 M10,15 L10,25 L20,25 L20,15" stroke="#ffffff" stroke-width="2" fill="none"/>
-    <text x="35" y="20" class="logo-text" font-size="16">THRIFTE</text>
-  </g>
-</svg>
