@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - Sistema de Reciclagem</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Seção Esquerda -->
+        <div class="left-section">
+            <div class="content">
+                <h1 data-translate="hero.title">Sustentável, Inteligente e Verde</h1>
+                <p data-translate="hero.subtitle">Transforme resíduos em recursos através do nosso sistema inteligente de reciclagem. Faça parte da revolução sustentável!</p>
+            </div>
+            <div class="footer">
+                <div class="language-selector" onclick="toggleLanguageDropdown()">
+                    <img id="current-flag" src="https://upload.wikimedia.org/wikipedia/commons/0/05/Flag_of_Brazil.svg" alt="BR Flag" class="flag-icon">
+                    <span id="current-language">Português</span>
+                    <i class="fas fa-chevron-down" id="dropdown-arrow"></i>
+                    <div class="language-dropdown" id="language-dropdown">
+                        <div class="language-option" onclick="changeLanguage('pt')">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/0/05/Flag_of_Brazil.svg" alt="BR Flag" class="flag-icon">
+                            <span>Português</span>
+                        </div>
+                        <div class="language-option" onclick="changeLanguage('en')">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/a/a4/Flag_of_the_United_States.svg" alt="US Flag" class="flag-icon">
+                            <span>English</span>
+                        </div>
+                        <div class="language-option" onclick="changeLanguage('es')">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/9/9a/Flag_of_Spain.svg" alt="ES Flag" class="flag-icon">
+                            <span>Español</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="nav-links">
+                    <a href="#" data-translate="nav.terms">Termos</a>
+                    <a href="#" data-translate="nav.contact">Contato</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Seção Direita - Formulário -->
+        <div class="right-section">
+            <div class="form-container">
+                <div class="form-header">
+                    <h2 id="form-title" data-translate="login.title">Entrar</h2>
+                    <p id="form-subtitle" data-translate="login.subtitle">Sistema de Reciclagem Inteligente</p>
+                </div>
+
+                <!-- Formulário de Login -->
+                <form id="login-form" class="auth-form active">
+                    <div class="input-group">
+                        <label for="login-email" data-translate="form.email">Email</label>
+                        <input type="email" id="login-email" name="email" required>
+                    </div>
+                    
+                    <div class="input-group">
+                        <label for="login-password" data-translate="form.password">Senha</label>
+                        <div class="password-container">
+                            <input type="password" id="login-password" name="password" required>
+                            <i class="fas fa-eye password-toggle" onclick="togglePassword('login-password')"></i>
+                        </div>
+                    </div>
+
+                    <div class="form-actions">
+                        <button type="submit" class="btn-primary" data-translate="login.button">Entrar</button>
+                    </div>
+
+                    <div class="divider">
+                        <span data-translate="form.or_with">Ou com</span>
+                    </div>
+
+                    <div class="social-buttons">
+                        <button type="button" class="btn-social">
+                            <i class="fab fa-google"></i>
+                            <span data-translate="social.google_login">Entrar com Google</span>
+                        </button>
+                        <button type="button" class="btn-social">
+                            <i class="fab fa-apple"></i>
+                            <span data-translate="social.apple_login">Entrar com Apple</span>
+                        </button>
+                    </div>
+
+                    <div class="form-footer">
+                        <p><span data-translate="login.no_account">Não tem uma conta?</span> <a href="#" onclick="switchToSignup()" data-translate="login.signup_link">Cadastrar-se</a></p>
+                    </div>
+                </form>
+
+                <!-- Formulário de Cadastro -->
+                <form id="signup-form" class="auth-form">
+                    <div class="input-group">
+                        <label for="signup-email" data-translate="form.email">Email</label>
+                        <input type="email" id="signup-email" name="email" required>
+                    </div>
+                    
+                    <div class="input-group">
+                        <label for="signup-password" data-translate="form.password">Senha</label>
+                        <div class="password-container">
+                            <input type="password" id="signup-password" name="password" required>
+                            <i class="fas fa-eye password-toggle" onclick="togglePassword('signup-password')"></i>
+                        </div>
+                        <small class="password-hint" data-translate="form.password_hint">Use 8 ou mais caracteres com uma mistura de letras, números e símbolos.</small>
+                    </div>
+
+                    <div class="input-group">
+                        <label for="signup-confirm-password" data-translate="form.confirm_password">Repetir Senha</label>
+                        <div class="password-container">
+                            <input type="password" id="signup-confirm-password" name="confirmPassword" required>
+                            <i class="fas fa-eye password-toggle" onclick="togglePassword('signup-confirm-password')"></i>
+                        </div>
+                    </div>
+
+                    <div class="checkbox-group">
+                        <input type="checkbox" id="terms" name="terms" required>
+                        <label for="terms" data-translate="form.accept_terms">Eu aceito os <a href="#" data-translate="form.terms_link">Termos</a></label>
+                    </div>
+
+                    <div class="form-actions">
+                        <button type="submit" class="btn-primary" data-translate="signup.button">Cadastrar</button>
+                    </div>
+
+                    <div class="divider">
+                        <span data-translate="form.or_with">Ou com</span>
+                    </div>
+
+                    <div class="social-buttons">
+                        <button type="button" class="btn-social">
+                            <i class="fab fa-google"></i>
+                            <span data-translate="social.google_signup">Cadastrar com Google</span>
+                        </button>
+                        <button type="button" class="btn-social">
+                            <i class="fab fa-apple"></i>
+                            <span data-translate="social.apple_signup">Cadastrar com Apple</span>
+                        </button>
+                    </div>
+
+                    <div class="form-footer">
+                        <p><span data-translate="signup.has_account">Já tem uma conta?</span> <a href="#" onclick="switchToLogin()" data-translate="signup.login_link">Fazer Login</a></p>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal de Sucesso -->
+    <div id="success-modal" class="modal">
+        <div class="modal-content">
+            <div class="modal-icon">
+                <i class="fas fa-check-circle"></i>
+            </div>
+            <h3 id="modal-title">Sucesso!</h3>
+            <p id="modal-message">Operação realizada com sucesso!</p>
+            <button class="btn-primary" onclick="closeModal()">OK</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
