@@ -158,6 +158,8 @@ function translatePage() {
         if (translation) {
             if (element.tagName === 'INPUT' && element.type === 'submit') {
                 element.value = translation;
+            } else if (element.tagName === 'A') {
+                element.textContent = translation;
             } else {
                 element.textContent = translation;
             }
